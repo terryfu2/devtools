@@ -1,0 +1,20 @@
+.header {
+    background-color: #19212a;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.text {
+margin: 0;
+}
+
+.header:hover {
+    color: aquamarine;
+    
+}
