@@ -7,8 +7,7 @@ import { Tab, Tabs } from "react-bootstrap";
 import prettyBytes from "pretty-bytes";
 import JSONInput from "react-json-editor-ajrm";
 import locale from "react-json-editor-ajrm/locale/en";
-import CodeView from "../../components/Codeview/Codeview";
-import styled from 'styled-components';
+
 
 import {ThemeContext } from "../../contexts/ThemeContext"; 
 

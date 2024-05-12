@@ -11,7 +11,7 @@ const App = () => {
     const { theme } = React.useContext(ThemeContext); 
     return (
         <div style={{minHeight: '100vh',backgroundColor:theme.backgroundColor}}>
-            <Router>
+            <Router basename="/devtools">
                 <div style={{ position: 'relative', minHeight: '100vh', backgroundColor: theme.backgroundColor }}>
                     <div style = {{backgroundColor: theme.background}}>  
                         <Header />

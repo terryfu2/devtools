@@ -15,9 +15,9 @@ const Routes = () => {
 
     return (
         <Switch>
-            <Route exact path="/" component={Home} />
             <Route path="/Httprequest" component={Httprequest} />
             <Route path="/Temp" component={Temp} />
+            <Route path="/" component={Home} />
         </Switch>
     );
 };

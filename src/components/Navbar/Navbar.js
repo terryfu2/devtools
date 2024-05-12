@@ -52,10 +52,19 @@ const Navbar = () => {
                 value={searchTerm}
                 onChange={handleSearchChange}
                 style={{
-                    width: '97%', padding: '10px', boxSizing: 'border-box',
-                    marginLeft: '10px', marginBottom: '10px', color: 'black',
-                    backgroundColor: 'white', border: 'none', borderBottom: '1px solid white'
+                    width: '97%',
+                    padding: '10px',
+                    boxSizing: 'border-box',
+                    marginLeft: '10px',
+                    marginBottom: '10px',
+                    color: 'black',
+                    backgroundColor: 'white',
+                    border: 'none',
+                    borderBottom: '1px solid white',
+                    borderRadius: '8px', // Rounded edges
+                    transition: 'border-color 0.3s', // Smooth transition for border color change
                 }}
+                
             />
             <Sidebar style={{ overflowY: 'auto', height: 'calc(100% - 130px)', width: '100%' }} backgroundColor={theme.backgroundColor}>
                 <Menu

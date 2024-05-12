@@ -1,7 +1,7 @@
 {
   "name": "devtools",
-  "version": "1.1.4",
-  "homepage": "https://terryfu.ca/devtools",
+  "version": "1.1.9",
+  "homepage": "https://terryfu2.github.io/devtools",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.11.4",
