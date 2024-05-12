@@ -1,14 +1,18 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Sidebar, Menu, MenuItem } from 'react-pro-sidebar';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import '../../global.css'
 import { ThemeContext } from "../../contexts/ThemeContext"; 
-
-import {routeItems} from "./Items/Items"
+import { routeItems } from "./Items/Items"
 
 const Navbar = () => {
     const [searchTerm, setSearchTerm] = useState("");
+    const [activeButton, setActiveButton] = useState(null);
     const inputRef = useRef(null);
+    const location = useLocation();
+    const { theme } = React.useContext(ThemeContext); 
+
+    document.documentElement.style.setProperty('--active-color', theme.text);
 
     const handleSearchChange = (event) => {
         setSearchTerm(event.target.value);
@@ -21,16 +25,26 @@ const Navbar = () => {
     };
 
     useEffect(() => {
+        if (location.pathname === "/") {
+            setActiveButton(null);
+        }
+    }, [location.pathname]);
+
+    useEffect(() => {
         window.addEventListener("keydown", handleKeyDown);
         return () => {
             window.removeEventListener("keydown", handleKeyDown);
         };
     }, []); 
 
-    const { theme } = React.useContext(ThemeContext); 
+    const btnClick = (id) => {
+        setActiveButton(id); 
+    };
+
+    
 
     return (
-        <div style={{ left: '2%', height: '100vh' }}>
+        <div id="btngrp" style={{ left: '2%', height: '100vh' }}>
             <input
                 ref={inputRef}
                 type="text"
@@ -51,6 +65,7 @@ const Navbar = () => {
                             fontWeight: 'bold',
                             color: theme.text,
                             backgroundColor: theme.backgroundColor,
+                            textAlign:'left',
                             '&:hover': {
                                 backgroundColor: theme.hover,
                             },
@@ -62,15 +77,22 @@ const Navbar = () => {
                                 width: '100%', 
                                 height: '2px', 
                                 backgroundColor: theme.text, 
-                                animation: 'drawLine 0.4s forwards', 
+                                animation: 'drawLine 0.5s forwards', 
                             },
+                            '.active':{
+                                backgroundColor: 'white !important'
+                            }
                         },
+                        
                     }}
                     renderExpandIcon={({ open }) => <span>{open ? '-' : '+'}</span>}
                 >
                     {filterMenuItems(searchTerm, routeItems).map(item => (
-                        <MenuItem key={item.label} component={<Link to={item.to} />}>
-                            {/* Render the icon component if available */}
+                        <MenuItem 
+                            key={item.label} 
+                            component={<Link to={item.to} onClick={() => btnClick(item.to)} id={item.to} />} 
+                            className={activeButton === item.to ? "active" : ""} // Apply active class if the button is active
+                        >
                             {item.icon && <item.icon style={{ marginRight: '8px' }} />}
                             {item.label}
                         </MenuItem>

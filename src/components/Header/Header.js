@@ -1,4 +1,3 @@
-// components/Header/Header.js
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import CodeIcon from '@mui/icons-material/Code';
@@ -21,9 +20,9 @@ const Logo = styled.div`
         font-size: 30px;
         margin: 0 0;
         & > a {
-        text-decoration: none;
-        position: relative;
-        color: black;
+            text-decoration: none;
+            position: relative;
+            color: black;
         }
     }
     @media (max-width: 960px) {
@@ -34,18 +33,26 @@ const Logo = styled.div`
     }
 `;
 
+const TopLine = styled.div`
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 6px;
+    background-color: ${themes.light.text};
+`;
+
 const Header = () => {
     const { theme, toggleTheme } = useContext(ThemeContext);
 
     return (
-
         <div>
-        <Link to="/">
-            <Logo theme={theme}><h1 style = {{fontWeight:"bolder"}}> <CodeIcon sx={{ fontSize: 40 }}/> devtools</h1></Logo>
-        </Link>
-        <div style={{ position: 'fixed', top: '1em', right: '2em', cursor: 'pointer' }} onClick={toggleTheme}>
-            {theme === themes.light ? <LightModeIcon sx={{ fontSize: 30,color:themes.light.text }} /> : <Brightness3Icon sx={{ fontSize: 30, color:"white"}} />}
-        </div>
+            <TopLine theme={theme} />
+            <Link to="/">
+                <Logo theme={theme}><h1 style={{ fontWeight: "bolder" }}> <CodeIcon sx={{ fontSize: 40 }} /> devtools</h1></Logo>
+            </Link>
+            <div style={{ position: 'fixed', top: '1em', right: '2em', cursor: 'pointer' }} onClick={toggleTheme}>
+                {theme === themes.light ? <LightModeIcon sx={{ fontSize: 30, color: themes.light.text }} /> : <Brightness3Icon sx={{ fontSize: 30, color: "white" }} />}
+            </div>
         </div>
     );
 };

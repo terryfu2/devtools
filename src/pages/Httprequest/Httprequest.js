@@ -7,6 +7,8 @@ import { Tab, Tabs } from "react-bootstrap";
 import prettyBytes from "pretty-bytes";
 import JSONInput from "react-json-editor-ajrm";
 import locale from "react-json-editor-ajrm/locale/en";
+import CodeView from "../../components/Codeview/Codeview";
+import styled from 'styled-components';
 
 import {ThemeContext } from "../../contexts/ThemeContext"; 
 
@@ -19,18 +21,15 @@ function Httprequest() {
     const [json, setJSON] = useState({});
 
     axios.interceptors.request.use((request) => {
-        //console.log("request:", request);
         request.customData = request.customData || {};
         request.customData.startTime = new Date().getTime();
         return request;
     });
     
     function updateEndTime(response) {
-        // defaulting custom data
-        //console.log(response);
+
         if (response !== undefined) {
         response.customData = response.customData || {};
-        // setting the time
         response.customData.time =
             new Date().getTime() - response.config.customData.startTime;
         return response;
@@ -67,14 +66,10 @@ function Httprequest() {
         validateStatus: () => true,
         })
         .catch((e) =>
-            //setResponse({ data: e.response.data, status: e.response.status })
             console.log(e)
         )
         .then((response) => {
-            // to show the response
-            //console.log(response);
             if (response !== undefined) {
-            //console.log("RESPONSE:", response);
             setStatus(response.status);
             setResponse(response.data);
             setResponseHeaders(response.headers);
@@ -89,6 +84,7 @@ function Httprequest() {
         });
     }
     const { theme } = React.useContext(ThemeContext); 
+
     return (
     <>
         <div style={{fontSize: "1.5rem", color:theme.font,fontWeight:"bold"}}>HTTP Request</div>
@@ -102,34 +98,35 @@ function Httprequest() {
                 method: "GET",
                 }}
                 onSubmit={(details) => {
-                //console.log("details:", details);
                 sendRequest(details);
                 }}
             >
                 {({ values }) => (
                 <Form>
                     <div className="form-group">
-                    <div className="input-group mb-4">
-                        <Field name="method" as="select">
-                        <option value="GET"> GET </option>
-                        <option value="POST"> POST </option>
-                        <option value="PUT"> PUT </option>
-                        <option value="PATCH"> PATCH </option>
-                        <option value="DELETE"> DELETE </option>
-                        </Field>
-                        <Field
-                        required
-                        type="url"
-                        name="url"
-                        placeholder="https://www.example.com"
-                        className="form-control"
-                        />
-                        <div className="form-group">
-                        <button className="btn btn-primary" type="submit">
-                            Submit
-                        </button>
+                        <div className="input-group mb-4">
+                            
+                            <Field name="method" as="select" >
+                                <option value="GET"> GET </option>
+                                <option value="POST"> POST </option>
+                                <option value="PUT"> PUT </option>
+                                <option value="PATCH"> PATCH </option>
+                                <option value="DELETE"> DELETE </option>
+                            </Field>
+                            
+                            <Field
+                                required
+                                type="url"
+                                name="url"
+                                placeholder="https://www.example.com"
+                                className="form-control"
+                            />
+                            <div className="form-group">
+                                <button className="btn btn-primary" type="submit">
+                                    Submit
+                                </button>
+                            </div>
                         </div>
-                    </div>
                     </div>
                     <Tabs
                     defaultActiveKey="query-params"
