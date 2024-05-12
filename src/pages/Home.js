@@ -1,29 +1,14 @@
 import React from "react";
+import {ThemeContext } from "../contexts/ThemeContext"; 
 
 const Home = () => {
-  return (
-    <div>
-        <div class = "com" style={{fontSize: "3rem", textAlign: "center", margin: "1%"}}>Home</div>
+    const { theme } = React.useContext(ThemeContext); 
+    return (
+        <div>
+            <div class = "com" style={{fontSize: "3rem", textAlign: "center", margin: "1%" ,color:theme.font}}>Home</div>
 
-        <div>asdkfasdokfasd fasdkfaksjdfnjaskdf asdkfjasdf akjsd faksdf asdjkf</div>
-        <div>asdkfasdokfasd fasdkfaksjdfnjaskdf asdkfjasdf akjsd faksdf asdjkf</div>
-        <div>asdkfasdokfasd fasdkfaksjdfnjaskdf asdkfjasdf akjsd faksdf asdjkf</div>
-        <div>asdkfasdokfasd fasdkfaksjdfnjaskdf asdkfjasdf akjsd faksdf asdjkf</div>
-        <div>asdkfasdokfasd fasdkfaksjdfnjaskdf asdkfjasdf akjsd faksdf asdjkf</div>
-        <div>asdkfasdokfasd fasdkfaksjdfnjaskdf asdkfjasdf akjsd faksdf asdjkf</div>
-        <div>asdkfasdokfasd fasdkfaksjdfnjaskdf asdkfjasdf akjsd faksdf asdjkf</div>
-        <div>asdkfasdokfasd fasdkfaksjdfnjaskdf asdkfjasdf akjsd faksdf asdjkf</div>
-        <div>asdkfasdokfasd fasdkfaksjdfnjaskdf asdkfjasdf akjsd faksdf asdjkf</div>
-        <div>asdkfasdokfasd fasdkfaksjdfnjaskdf asdkfjasdf akjsd faksdf asdjkf</div>
-        <div>asdkfasdokfasd fasdkfaksjdfnjaskdf asdkfjasdf akjsd faksdf asdjkf</div>
-        <div>asdkfasdokfasd fasdkfaksjdfnjaskdf asdkfjasdf akjsd faksdf asdjkf</div>
-        <div>asdkfasdokfasd fasdkfaksjdfnjaskdf asdkfjasdf akjsd faksdf asdjkf</div>
-        <div>asdkfasdokfasd fasdkfaksjdfnjaskdf asdkfjasdf akjsd faksdf asdjkf</div>
-        <div>asdkfasdokfasd fasdkfaksjdfnjaskdf asdkfjasdf akjsd faksdf asdjkf</div>
-        <div>asdkfasdokfasd fasdkfaksjdfnjaskdf asdkfjasdf akjsd faksdf asdjkf</div>
-        <div>asdkfasdokfasd fasdkfaksjdfnjaskdf asdkfjasdf akjsd faksdf asdjkf</div>
-    </div>
-);
+        </div>
+    );
 };
 
 export default Home;
