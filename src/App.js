@@ -12,13 +12,11 @@ import Httprequest from "./pages/Httprequest/Httprequest";
 
 const RoutedContent = () => {
     React.useEffect(() => {
-        const preventScroll = (e) => {
-        e.preventDefault();
-        };
+        
         document.body.style.overflow = 'hidden';
 
         return () => {
-        document.body.style.overflow = '';
+            document.body.style.overflow = '';
         };
     }, []);
 
@@ -42,7 +40,7 @@ const App = () => {
                     <div style={{ position: 'absolute', top: '80px', left: '0', width: '19%', height: 'calc(100% - 80px)', }}>
                         <Navbar />
                     </div>
-                    <div style={{ position: 'absolute', top: '80px', marginLeft: '200px', left: '25%' }}>
+                    <div style={{ position: 'absolute', top: '80px', marginLeft: '200px', left: '10%',width:"70%" }}>
                         <RoutedContent />
                     </div>
                 </div>

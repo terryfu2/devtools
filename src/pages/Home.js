@@ -1,12 +1,12 @@
 import React from "react";
-import {ThemeContext } from "../contexts/ThemeContext"; 
+import {themes,ThemeContext } from "../contexts/ThemeContext"; 
 
 const Home = () => {
     const { theme } = React.useContext(ThemeContext); 
     return (
         <div>
-            <div class = "com" style={{fontSize: "3rem", textAlign: "center", margin: "1%" ,color:theme.font}}>Home</div>
-
+            <div style={{fontSize: "3rem",color:themes.light.text,fontWeight:"bolder"}}>All-in-one Toolbox</div>
+            <div style={{fontSize: "3rem",color:theme.font}}>for Developers.</div>
         </div>
     );
 };

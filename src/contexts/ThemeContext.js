@@ -10,8 +10,8 @@ export const themes = {
     hover:'#091E4224'
   },
   dark: {
-    background: '#19212a',
-    backgroundColor:'#19212a',
+    background: '#333333',
+    backgroundColor:'#333333',
     text: '#ffffff',
     font: 'white',
     hover: '#464646'
