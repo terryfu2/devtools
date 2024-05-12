@@ -6,7 +6,7 @@ const Home = () => {
     return (
         <div>
             <div style={{fontSize: "3rem",color:themes.light.text,fontWeight:"bolder"}}>All-in-one Toolbox</div>
-            <div style={{fontSize: "3rem",color:theme.font}}>for Developers.</div>
+            <div style={{fontSize: "3rem",color:theme.font,fontWeight:"bold"}}>for Developers.</div>
         </div>
     );
 };

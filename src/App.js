@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router} from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
@@ -26,7 +26,7 @@ const App = () => {
                 <Footer/>
             </Router>
         </div>
-      
+
     );
 };
 

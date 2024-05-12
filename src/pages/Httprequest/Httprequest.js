@@ -1,19 +1,3 @@
-/*
-import React from "react";
-import {ThemeContext } from "../../contexts/ThemeContext"; 
-
-const Httprequest = () => {
-    const { theme } = React.useContext(ThemeContext); 
-    return (
-    
-        <div style={{fontSize: "2rem", color:theme.font}}>HTTP Request</div>
-    
-    );
-};
-
-export default Httprequest;
-*/
-
 import React, { useState } from "react";
 import { Formik, Form, Field, FieldArray } from "formik";
 import axios from "axios";
@@ -24,7 +8,7 @@ import prettyBytes from "pretty-bytes";
 import JSONInput from "react-json-editor-ajrm";
 import locale from "react-json-editor-ajrm/locale/en";
 
-import {themes,ThemeContext } from "../../contexts/ThemeContext"; 
+import {ThemeContext } from "../../contexts/ThemeContext"; 
 
 function Httprequest() {
     const [status, setStatus] = useState(0);

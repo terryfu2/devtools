@@ -35,19 +35,19 @@ const Logo = styled.div`
 `;
 
 const Header = () => {
-  const { theme, toggleTheme } = useContext(ThemeContext);
+    const { theme, toggleTheme } = useContext(ThemeContext);
 
-  return (
+    return (
 
-    <div>
-      <Link to="/">
-        <Logo theme={theme}><h1> <CodeIcon sx={{ fontSize: 40 }}/> devtools</h1></Logo>
-      </Link>
-      <div style={{ position: 'fixed', top: '1em', right: '2em', cursor: 'pointer' }} onClick={toggleTheme}>
-        {theme === themes.light ? <LightModeIcon sx={{ fontSize: 30,color:themes.light.text }} /> : <Brightness3Icon sx={{ fontSize: 30, color:"white"}} />}
-      </div>
-    </div>
-  );
+        <div>
+        <Link to="/">
+            <Logo theme={theme}><h1 style = {{fontWeight:"bolder"}}> <CodeIcon sx={{ fontSize: 40 }}/> devtools</h1></Logo>
+        </Link>
+        <div style={{ position: 'fixed', top: '1em', right: '2em', cursor: 'pointer' }} onClick={toggleTheme}>
+            {theme === themes.light ? <LightModeIcon sx={{ fontSize: 30,color:themes.light.text }} /> : <Brightness3Icon sx={{ fontSize: 30, color:"white"}} />}
+        </div>
+        </div>
+    );
 };
 
 export default Header;
