@@ -18,7 +18,7 @@ const Logo = styled.div`
         opacity: 1;
     }
     & > h1 {
-        font-size: 40px;
+        font-size: 30px;
         margin: 0 0;
         & > a {
         text-decoration: none;

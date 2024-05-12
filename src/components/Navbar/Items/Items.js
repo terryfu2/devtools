@@ -5,9 +5,9 @@ import DataObjectIcon from '@mui/icons-material/DataObject';
 export const routeItems = [
     //{ label: "Home", to: "/" },
     { label: "HTTP Request", to: "/HttpRequest", icon: ApiIcon},
-    { label: "Git Graph", to: "/", icon: MergeTypeIcon},
-    { label: "JSON Minify/Beautify ", to: "/", icon: DataObjectIcon}, 
-    
+    { label: "Git Graph", to: "/Temp", icon: MergeTypeIcon},
+    { label: "JSON Minify/Beautify ", to: "/Temp", icon: DataObjectIcon}, 
+
     { label: "Git Graph2", to: "/" },
     { label: "HTTP Request3", to: "/" },
     { label: "Git Graph4", to: "/" },
