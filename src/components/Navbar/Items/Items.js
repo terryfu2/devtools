@@ -1,10 +1,12 @@
 import ApiIcon from '@mui/icons-material/Api'; 
 import MergeTypeIcon from '@mui/icons-material/MergeType';
 import DataObjectIcon from '@mui/icons-material/DataObject';
+import QuizIcon from '@mui/icons-material/Quiz';
 
 export const routeItems = [
     //{ label: "Home", to: "/" },
     { label: "HTTP Request", to: "/HttpRequest", icon: ApiIcon},
+    { label: "Lorem Ipsum Generator", to: "/LiGenerator",icon:QuizIcon },
     { label: "Git Graph", to: "/Temp", icon: MergeTypeIcon},
     { label: "JSON Minify/Beautify ", to: "/Temp", icon: DataObjectIcon}, 
 
