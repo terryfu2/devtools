@@ -8,7 +8,7 @@ export const routeItems = [
     { label: "HTTP Request", to: "/HttpRequest", icon: ApiIcon},
     { label: "Lorem Ipsum Generator", to: "/LiGenerator",icon:QuizIcon },
     { label: "Git Graph", to: "/Temp", icon: MergeTypeIcon},
-    { label: "JSON Minify/Beautify ", to: "/Temp", icon: DataObjectIcon}, 
+    { label: "JSON Minify/Beautify ", to: "/Jsonmb", icon: DataObjectIcon}, 
 
     { label: "Git Graph2", to: "/" },
     { label: "HTTP Request3", to: "/" },

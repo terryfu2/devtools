@@ -31,7 +31,7 @@ const Footer = () => {
     const lastPushAgo = lastPushDate ? daysAgo(lastPushDate) : '';
     const { theme } = React.useContext(ThemeContext); 
     return (
-        <div style={{ position: 'absolute', bottom: '10px', left: '50%', transform: 'translateX(-50%)', color: theme.font ,fontSize:'12px'}}>
+        <div style={{ position: 'absolute', bottom: '10px', left: '60%', transform: 'translateX(-50%)', color: theme.font ,fontSize:'12px'}}>
             Last Build:  {lastPushAgo} <a href = "https://github.com/terryfu2/devtools">v.{packageJson.version}</a> by <a href="https://terryfu.ca">Terry Fu</a>
         </div>
     );
